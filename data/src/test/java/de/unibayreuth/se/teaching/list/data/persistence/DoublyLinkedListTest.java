@@ -34,6 +34,7 @@ class DoublyLinkedListTest {
         Assertions.assertNull(list.getEnd().getNext());
     }
 
+
     @Test
     void testInsertDoubleValueToEmptyList(){
         // given: the list is empty...
@@ -51,6 +52,7 @@ class DoublyLinkedListTest {
         Assertions.assertNull(list.getEnd().getPrev());
         Assertions.assertNull(list.getEnd().getNext());
     }
+
 
     @Test
     void testInsertNewMinimum() {
