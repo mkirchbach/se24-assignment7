@@ -35,6 +35,24 @@ class DoublyLinkedListTest {
     }
 
     @Test
+    void testInsertDoubleValueToEmptyList(){
+        // given: the list is empty...
+        Assertions.assertEquals(0, list.getLength());
+        // when: appending an value
+        list.insert(0.9);
+        // then: the list has one element...
+        Assertions.assertEquals(1, list.getLength());
+        // ...and the new element is the start and end of the list
+        Assertions.assertEquals(0.9, list.getStart().getValue());
+        Assertions.assertEquals(0.9, list.getEnd().getValue());
+        // ...and the start and end pointers do not have predecessors or successors
+        Assertions.assertNull(list.getStart().getPrev());
+        Assertions.assertNull(list.getStart().getNext());
+        Assertions.assertNull(list.getEnd().getPrev());
+        Assertions.assertNull(list.getEnd().getNext());
+    }
+
+    @Test
     void testInsertNewMinimum() {
         // given: the list as four sorted elements
         Assertions.assertTrue(list.isEmpty());
